@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>دفتر الأستاذ العام — التصميم المقترح</title>
+<style>
+:root{--navy:#0A2342;--gold:#D4AF37;--blue:#164E8F;--teal:#0E9AA7;--bg:#F3F6FB;--card:#fff;--line:#DCE5F2;--ink:#1d2a3d;--mut:#6b7a90;--tint:#EEF4FC;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B1524;--card:#111E33;--line:#243551;--ink:#E6ECF5;--mut:#93A3BA;--tint:#16263F}}
+:root[data-theme="dark"]{--bg:#0B1524;--card:#111E33;--line:#243551;--ink:#E6ECF5;--mut:#93A3BA;--tint:#16263F}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans Arabic",Cairo,Tajawal,system-ui,sans-serif;font-size:14px}
+.w{max-width:1320px;margin:0 auto;padding:14px}
+.hd{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}
+.hd h1{margin:0;font-size:20px;color:var(--blue)}.crumb{color:var(--mut);font-size:12px}
+.tg{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:6px 12px;cursor:pointer;font:inherit}
+.cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-bottom:12px}
+.c{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--navy);border-radius:14px;padding:12px 14px;box-shadow:0 8px 22px -16px rgba(10,35,66,.5)}
+.c small{color:var(--mut);display:block;margin-bottom:6px}.c b{font-size:19px;font-variant-numeric:tabular-nums}
+.c.d{border-top-color:var(--blue)}.c.k{border-top-color:var(--teal)}.c.g{border-top-color:var(--gold)}
+.ok{display:inline-block;margin-inline-start:6px;font-size:11px;color:#0a7d4d;background:#e3f6ec;border-radius:20px;padding:1px 8px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:inset 0 2px 0 var(--gold);padding:14px 16px;margin-bottom:12px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer;font:inherit}
+.chip.on{background:var(--navy);color:#fff;border-color:var(--gold)}
+.g6{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px 14px}
+.f label{display:block;font-size:12px;color:var(--mut);margin-bottom:4px}
+.f div{height:40px;border:1px solid var(--line);border-radius:10px;background:var(--bg);display:flex;align-items:center;padding:0 12px;color:var(--mut)}
+.f.v div{color:var(--ink);background:var(--card)}
+.sw{grid-column:span 2;display:flex;align-items:center;gap:8px;min-height:40px;border:1px solid var(--line);background:var(--tint);border-radius:10px;padding:8px 12px}
+.sw i{width:30px;height:16px;border-radius:9px;background:#b7c3d6;position:relative;flex:none}
+.sw i::after{content:"";position:absolute;top:2px;inset-inline-start:2px;width:12px;height:12px;border-radius:50%;background:#fff}
+.sw.on i{background:var(--blue)}.sw.on i::after{inset-inline-start:16px}
+.sec{margin:12px 0 6px;font-weight:700;color:var(--blue);font-size:13px}
+.tw{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:auto}
+table{width:100%;border-collapse:collapse;min-width:900px;font-variant-numeric:tabular-nums}
+th{background:var(--navy);color:#fff;text-align:start;padding:10px 12px;border-bottom:3px solid var(--gold);font-weight:650;white-space:nowrap}
+td{padding:7px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+tbody tr:nth-child(even) td{background:var(--tint)}tbody tr:hover td{background:rgba(22,78,143,.1)}
+tr.t td{font-weight:700;background:var(--tint)!important;border-top:2px solid var(--navy)}
+.n{text-align:end}.dr{color:var(--blue)}.cr{color:var(--teal)}.lk{color:var(--blue)}
+.b{border-radius:20px;padding:1px 10px;font-size:12px;background:#e7effa;color:var(--blue)}
+.b.p{background:#e0f5f6;color:#0a7a85}
+.st{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:var(--mut);font-size:12px;margin-top:10px}
+.note{margin-top:14px;font-size:12px;color:var(--mut);border:1px dashed var(--line);border-radius:12px;padding:10px 14px}
+@media(max-width:900px){.cards{grid-template-columns:repeat(2,1fr)}.g6{grid-template-columns:repeat(2,1fr)}.sw{grid-column:span 2}}
+</style></head><body><div class="w">
+<div class="hd"><div><div class="crumb">الحسابات › التقارير المالية</div><h1>دفتر الأستاذ العام</h1></div><button class="tg" id="th">☾ / ☀</button></div>
+
+<div class="cards">
+<div class="c g"><small>الرصيد الافتتاحي</small><b>0.00 ر.س</b></div>
+<div class="c d"><small>إجمالي المدين</small><b class="dr">1,043.50 ر.س</b></div>
+<div class="c k"><small>إجمالي الدائن</small><b class="cr">1,043.50 ر.س</b></div>
+<div class="c"><small>صافي الحركة</small><b>0.00 ر.س</b></div>
+<div class="c"><small>الرصيد الختامي <span class="ok">✓ مطابق</span></small><b>0.00 ر.س</b></div>
+</div>
+
+<div class="chips" id="ch"><button class="chip">اليوم</button><button class="chip">هذا الأسبوع</button><button class="chip on">هذا الشهر</button><button class="chip">الربع الحالي</button><button class="chip">السنة</button></div>
+
+<div class="panel">
+<div class="g6">
+<div class="f v"><label>الشركة</label><div>الحراري جروب</div></div>
+<div class="f v"><label>من تاريخ</label><div>10-10-2026</div></div>
+<div class="f v"><label>إلى تاريخ</label><div>10-11-2026</div></div>
+<div class="f"><label>الحساب</label><div>الكل</div></div>
+<div class="f"><label>رقم السند</label><div>—</div></div>
+<div class="f v"><label>التصنيف</label><div>حسب السند (موحّد)</div></div>
+<div class="f"><label>الدفتر المالي</label><div>—</div></div>
+<div class="f"><label>نوع الجهة</label><div>—</div></div>
+<div class="f"><label>العملة</label><div>—</div></div>
+<div class="f"><label>مركز التكلفة</label><div>—</div></div>
+<div class="f"><label>المشروع</label><div>—</div></div>
+<div class="f"><label>مقابل رقم السند</label><div>—</div></div>
+</div>
+<div class="sec">الرصيد الافتتاحي</div>
+<div class="g6"><div class="sw on"><i></i>تضمين قيود الدفتر الافتراضي</div><div class="sw"><i></i>عرض القيود الافتتاحية</div><div class="sw"><i></i>تعطيل حساب الرصيد الافتتاحي</div></div>
+<div class="sec">القيود والعرض</div>
+<div class="g6"><div class="sw"><i></i>عرض القيود الملغاة</div><div class="sw on"><i></i>وضع الأبعاد المحاسبية</div><div class="sw"><i></i>إظهار الملاحظات</div></div>
+</div>
+
+<div class="tw"><table><thead><tr><th>#</th><th>التاريخ</th><th>الحساب</th><th class="n">مدين (SAR)</th><th class="n">دائن (SAR)</th><th class="n">الرصيد (SAR)</th><th>نوع السند</th><th>رقم السند</th></tr></thead><tbody>
+<tr class="t"><td>1</td><td></td><td>افتتاحي</td><td class="n">0.00</td><td class="n">0.00</td><td class="n">0.00</td><td></td><td></td></tr>
+<tr><td>2</td><td>11-10-2026</td><td>Debtors</td><td class="n dr">58.00</td><td class="n cr">0.00</td><td class="n">58.00</td><td><span class="b">فاتورة مبيعات</span></td><td class="lk">ACC-SINV-2026-00060</td></tr>
+<tr><td>3</td><td>11-10-2026</td><td>VAT 15%</td><td class="n dr">0.00</td><td class="n cr">7.50</td><td class="n">50.50</td><td><span class="b">فاتورة مبيعات</span></td><td class="lk">ACC-SINV-2026-00060</td></tr>
+<tr><td>4</td><td>11-10-2026</td><td>Sales</td><td class="n dr">0.00</td><td class="n cr">50.00</td><td class="n">0.50</td><td><span class="b">فاتورة مبيعات</span></td><td class="lk">ACC-SINV-2026-00060</td></tr>
+<tr><td>8</td><td>11-10-2026</td><td>Debtors</td><td class="n dr">0.00</td><td class="n cr">58.00</td><td class="n">-58.00</td><td><span class="b p">قيد دفع</span></td><td class="lk">ACC-PAY-2026-00026</td></tr>
+<tr><td>9</td><td>11-10-2026</td><td>Cash</td><td class="n dr">58.00</td><td class="n cr">0.00</td><td class="n">0.00</td><td><span class="b p">قيد دفع</span></td><td class="lk">ACC-PAY-2026-00026</td></tr>
+<tr class="t"><td>308</td><td></td><td>الإجمالي</td><td class="n dr">1,043.50</td><td class="n cr">1,043.50</td><td class="n">0.00</td><td></td><td></td></tr>
+<tr class="t"><td>309</td><td></td><td>الإغلاق (الافتتاحي + الإجمالي)</td><td class="n">0.00</td><td class="n">0.00</td><td class="n">0.00</td><td></td><td></td></tr>
+</tbody></table></div>
+<div class="st"><span>307 قيداً · الحراري جروب · SAR</span><span>الأرقام من صفوف التقرير نفسه، لا حساب منفصل</span></div>
+<div class="note">معاينة تصميم فقط. الأرقام نموذجية مقتبسة من الصفحة الحالية. الرصيد السالب ليس بالأحمر عمداً (الأحمر للأخطاء والقيود الملغاة فقط). Badges وInspector والتحليل في مراحل لاحقة.</div>
+</div>
+<script>
+document.querySelectorAll('#ch .chip').forEach(b=>b.onclick=()=>{document.querySelectorAll('#ch .chip').forEach(x=>x.classList.remove('on'));b.classList.add('on')});
+document.getElementById('th').onclick=()=>{const r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark'};
+</script></body></html>
